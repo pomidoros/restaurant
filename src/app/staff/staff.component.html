@@ -1,0 +1,33 @@
+<div class="relative overflow-x-auto mt-10">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th scope="col" class="px-6 py-3">
+        Name
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Role
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Serviced
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      *ngFor="let employee of staff"
+      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+    >
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        {{employee.username}}
+      </th>
+      <td class="px-6 py-4">
+        {{employee.role}}
+      </td>
+      <td class="px-6 py-4">
+        {{employee.serviced}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

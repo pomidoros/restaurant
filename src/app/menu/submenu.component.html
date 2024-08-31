@@ -1,0 +1,33 @@
+<nav
+  (click)="hideMenu = !hideMenu"
+  class="cursor-pointer relative flex w-full flex-wrap items-center justify-between bg-neutral-100 py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4">
+  <div class="flex w-full flex-wrap items-center justify-between px-3">
+    <div>
+      <button
+        class="my-1 mr-2 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+      >
+        {{title}}
+      </button>
+    </div>
+  </div>
+</nav>
+<div *ngIf="hideMenu" class="mt-5 menu">
+  <div
+    *ngFor="let menuItem of menu"
+    class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+    <div
+      class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+      {{menuItem.type}}
+    </div>
+    <div class="p-6">
+      <h5
+        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+        {{menuItem.name}}
+      </h5>
+    </div>
+    <div
+      class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+      {{menuItem.price.eur}}.{{menuItem.price.cents}}€
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="mt-8 mb-8 ml-4 flex items-end">
+  <app-select-dish [(selected)]="selectedMenuItem"></app-select-dish>
+  <button
+    (click)="onCreate()"
+    class="ml-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+    New Order
+  </button>
+</div>
+<dl class="ml-10 mr-10 mt-2 text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+  <div
+    *ngFor="let order of orders"
+    class="flex flex-row items-end pb-3">
+    <div>
+      <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">{{order.menuId.name}}</dt>
+      <dd class="text-lg font-semibold">{{order.status}}</dd>
+    </div>
+    <button
+      *ngIf="order.status == 'ready'"
+      (click)="onComplete(order._id)"
+      class="ml-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Complete
+    </button>
+  </div>
+</dl>
